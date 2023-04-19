@@ -12,6 +12,8 @@ public class Employee {
     }
 
     public String getEmpName() {
+            if(empName==null)
+                return empName="";
             return empName;
         }
 

@@ -25,6 +25,7 @@ public class BonusCalculatorServiceImp implements BonusCalculatorService {
             List<Bonus.EmployeeBonus> filteredList = bonusList.stream()
                     .filter(bonus -> Utils.getMillis(bonus.getExitDate()) > System.currentTimeMillis() && Utils.getMillis(bonus.getJoiningDate()) < System.currentTimeMillis())
                     .collect(Collectors.toList());
+             Utils.sortByName(filteredList);
         return employeeMapperService.map(filteredList);
     }
 
